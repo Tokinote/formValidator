@@ -26,8 +26,8 @@ const valid = (function formValid() {
 
     // Check email is valid
     function checkEmail(input) {
-        const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        if (re.test(input.value.trim())) {
+        const regexEmail = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if (regexEmail.test(input.value.trim())) {
             showSuccess(input);
         } else {
             showError(input, 'Email is not valid');
@@ -35,8 +35,8 @@ const valid = (function formValid() {
     }
 
     function checkPassword(input) {
-        const rp = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
-        if (rp.test(input.value.trim())) {
+        const regexPassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
+        if (regexPassword.test(input.value.trim())) {
             showSuccess(input);
         } else {
             showError(input, 'Password should contain at least: \n  One digit \n One lower case \n One upper case \n 8 charracters');
